@@ -45,7 +45,7 @@ RUN cd \
 RUN cd \
     && wget https://github.com/apache/incubator-pagespeed-ngx/archive/v${NPS_VERSION}.zip \
     && unzip v${NPS_VERSION}.zip \
-    && nps_dir=$(find . -name "*pagespeed-ngx-${NPS_VERSION}" -type d) \
+    && nps_dir=incubator-pagespeed-ngx-${NPS_VERSION} \
     && cd "$nps_dir" \
     && NPS_RELEASE_NUMBER=${NPS_VERSION/beta/} \
     && NPS_RELEASE_NUMBER=${NPS_VERSION/stable/} \
