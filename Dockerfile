@@ -1,10 +1,6 @@
 FROM ubuntu:latest
 
-MAINTAINER A. Gökay Duman <smyrnof@gmail.com>
-
-ENV NPS_VERSION 1.13.35.2-stable
-ENV NGINX_VERSION 1.16.1
-ENV CPU_CORE x64
+MAINTAINER A. Gökay Duman <aligokayduman@gmail.com>
 
 #General Commands
 RUN apt update \ 
