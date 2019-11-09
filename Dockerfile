@@ -78,6 +78,6 @@ RUN cd \
     && cp objs/ngx_http_modsecurity_module.so /etc/nginx/modules \
     && cp objs/ngx_pagespeed.so /etc/nginx/modules \
     && make \
-    && sudo make install   
+    && make install   
 
 CMD ["nginx", "-g", "daemon off;"]
