@@ -2,7 +2,7 @@ FROM ubuntu:latest
 
 MAINTAINER A. Gökay Duman <aligokayduman@gmail.com>
 
-ENV NPS_VERSION 1.13.35.2-stable
+ENV NPS_VERSION 1.13.35.2
 ENV NGINX_VERSION 1.16.1
 ENV CPU_CORE x64
 
@@ -44,18 +44,18 @@ RUN cd \
 
 #Google PageSpeed Install
 RUN cd \
-    && wget https://github.com/pagespeed/ngx_pagespeed/archive/v${GPS_VERSION}-stable.zip \
-    && unzip v${GPS_VERSION}-stable.zip \
-    && cd incubator-pagespeed-ngx-${GPS_VERSION}-stable/ \
-    && wget https://dl.google.com/dl/page-speed/psol/${GPS_VERSION}-${CPU_CORE}.tar.gz \
-    && tar -xzvf ${GPS_VERSION}-${CPU_CORE}.tar.gz
+    && wget https://github.com/pagespeed/ngx_pagespeed/archive/v${NPS_VERSION}-stable.zip \
+    && unzip v${NPS_VERSION}-stable.zip \
+    && cd incubator-pagespeed-ngx-${NPS_VERSION}-stable/ \
+    && wget https://dl.google.com/dl/page-speed/psol/${NPS_VERSION}-${CPU_CORE}.tar.gz \
+    && tar -xzvf ${NPS_VERSION}-${CPU_CORE}.tar.gz
 
 #Nginx Install
 RUN cd \
     && wget http://nginx.org/download/nginx-${NGINX_VERSION}.tar.gz \
     && tar -xvzf nginx-${NGINX_VERSION}.tar.gz \
     && cd nginx-${NGINX_VERSION}/ \
-    && ./configure --add-dynamic-module=$HOME/incubator-pagespeed-ngx-${GPS_VERSION}-stable \
+    && ./configure --add-dynamic-module=$HOME/incubator-pagespeed-ngx-${NPS_VERSION}-stable \
     && ./configure --with-compat --add-dynamic-module=$HOME/ModSecurity-nginx \
     && make modules \
     && cp objs/ngx_http_modsecurity_module.so /etc/nginx/modules \
