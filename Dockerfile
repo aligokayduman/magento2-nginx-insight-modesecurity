@@ -28,7 +28,8 @@ RUN apt update \
                       libpcre3 \
                       libpcre3-dev \
                       unzip \
-                      uuid-dev
+                      uuid-dev \
+                      libssl-dev
                       
 #ModSecurity Install
 RUN cd \    
