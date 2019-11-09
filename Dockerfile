@@ -2,6 +2,9 @@ FROM ubuntu:latest
 
 MAINTAINER A. Gökay Duman <aligokayduman@gmail.com>
 
+ENV GPS_VERSION 1.13.35.2
+ENV NGINX_VERSION 1.16.1
+
 #General Commands
 RUN apt update \ 
     && apt upgrade -y \
